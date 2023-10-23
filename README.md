@@ -29,5 +29,10 @@ I need to develop a work calender for employees to use during their work hours.
 I used CSS and HTML for this project in order to build and style this website. After that, I used JavaScript to create the functions for the calender
 
 ## Links 
+GitHub Repo: [https://github.com/spencer1227/fast-five]
+
+Deploy: [https://spencer1227.github.io/fast-five/]
 
 ## Screenshot
+![Screenshot](./assets/Screenshot1.png)
+![Screenshot](./assets/Screenshot2.png)
