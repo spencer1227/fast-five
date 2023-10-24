@@ -6,31 +6,37 @@ $(function () {
         localStorage.setItem(time, data);
     })
 
-$ ("#hour8 textarea").val(localStorage.getItem("hour8"))
-$ ("#hour9 textarea").val(localStorage.getItem("hour9"))
-$ ("#hour10 textarea").val(localStorage.getItem("hour10"))
-$ ("#hour11 textarea").val(localStorage.getItem("hour11"))
-$ ("#hour12 textarea").val(localStorage.getItem("hour12"))
-$ ("#hour13 textarea").val(localStorage.getItem("hour13"))
-$ ("#hour14 textarea").val(localStorage.getItem("hour14"))
-$ ("#hour15 textarea").val(localStorage.getItem("hour15"))
-$ ("#hour16 textarea").val(localStorage.getItem("hour16"))
-$ ("#hour17 textarea").val(localStorage.getItem("hour17"))
+$ ("#08 textarea").val(localStorage.getItem("08"))
+$ ("#09 textarea").val(localStorage.getItem("09"))
+$ ("#10 textarea").val(localStorage.getItem("10"))
+$ ("#11 textarea").val(localStorage.getItem("11"))
+$ ("#12 textarea").val(localStorage.getItem("12"))
+$ ("#13 textarea").val(localStorage.getItem("13"))
+$ ("#14 textarea").val(localStorage.getItem("14"))
+$ ("#15 textarea").val(localStorage.getItem("15"))
+$ ("#16 textarea").val(localStorage.getItem("16"))
+$ ("#17 textarea").val(localStorage.getItem("17"))
 // $ ("#hour8 textarea").val(localStorage.getItem("hour8"))
 
     $("#currentDay").append(
         dayjs().format("MMM DD, YYYY"))
+    $("#currentHour").append(
+        dayjs().format("HH:MM"))
+    
     var currentHour = dayjs().hour()
-    for (var i = 9; i <= 17; i++) {
-        var id = "hour-" + i
-        var data = localStorage.getItem(id)
-        $("#" + id).children("textarea").val(data)
-        if (i < currentHour) {
-            $("#" + id).addClass("past")
-        } else if (i === currentHour) {
-            $("#" + id).addClass("present")
+    
+    $(".hour").each(function(){
+        var id = $(this).attr("id")
+
+    if (id < currentHour) {
+            $(this).addClass("past")
+        } else if (id == currentHour) {
+            $(this).addClass("present")
         } else {
-            $("#" + id).addClass("future")
+            $(this).addClass("future")
         }
-    }
+    })
+
+    
 });
+
